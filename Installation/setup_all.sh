@@ -4,7 +4,7 @@ echo "Install Environment Scripts"
 echo "======================================================="
 
 WORKSPACE_DIR=$(pwd)
-BASELINE_DIR="$WORKSPACE_DIR/GlobalHumanoidRobotChallenge2026_Baseline"
+BASELINE_DIR="$WORKSPACE_DIR/GlobalHumanoidRobotChallenge_2026_Baseline"
 
 echo "[1/3] Create IsaacSim.sh (Shortcut to enter Docker)"
 cat << EOF > IsaacSim.sh
