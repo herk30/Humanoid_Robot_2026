@@ -10,7 +10,8 @@ echo "[1/3] Create IsaacSim.sh (Shortcut to enter Docker)"
 cat << EOF > IsaacSim.sh
 #!/bin/bash
 cd $BASELINE_DIR
-sudo ./run.sh
+sed -i 's/GHRC_2026/ghrc_2026/g' run.sh
+sudo -E ./run.sh
 EOF
 chmod +x IsaacSim.sh
 
