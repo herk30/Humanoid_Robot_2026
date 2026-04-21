@@ -1,0 +1,37 @@
+#!/bin/bash
+/isaac-sim/python.sh lerobot/scripts/train.py \
+  --dataset.repo_id=your_org/Packing_Box_dataset \
+  --dataset.root=./challenge2026_dataset/Packing_Box/packing_box_episode_50 \
+  --policy.type=act \
+  --policy.n_obs_steps=1 \
+  --policy.chunk_size=50 \
+  --policy.n_action_steps=50 \
+  --policy.vision_backbone=resnet18 \
+  --policy.pretrained_backbone_weights=ResNet18_Weights.IMAGENET1K_V1 \
+  --policy.dim_model=256 \
+  --policy.n_heads=4 \
+  --policy.dim_feedforward=1024 \
+  --policy.n_encoder_layers=4 \
+  --policy.n_decoder_layers=1 \
+  --policy.use_vae=true \
+  --policy.latent_dim=32 \
+  --policy.n_vae_encoder_layers=4 \
+  --policy.dropout=0.1 \
+  --policy.kl_weight=10.0 \
+  --policy.optimizer_lr=1e-5 \
+  --policy.optimizer_weight_decay=1e-4 \
+  --policy.optimizer_lr_backbone=1e-5 \
+  --policy.device=cuda \
+  --policy.use_amp=true \
+  --output_dir=challenge2026_baseline/Packing_Box/act_001/ \
+  --job_name=task4_act \
+  --resume=false \
+  --seed=1000 \
+  --num_workers=8 \
+  --batch_size=8 \
+  --steps=100000 \
+  --eval_freq=0 \
+  --log_freq=200 \
+  --save_checkpoint=true \
+  --save_freq=5000 \
+  --wandb.entity=your_wandb_entity
