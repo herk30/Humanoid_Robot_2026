@@ -42,4 +42,8 @@ sudo nvidia-ctk runtime configure --runtime=docker
 
 sudo systemctl restart docker
 
+cd GlobalHumanoidRobotChallenge_2026_Baseline/
+
+docker build --build-arg PIP_INDEX_URL=https://pypi.org/simple -t ghrc_2026:v0 .
+
 echo "Finished"
